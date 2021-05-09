@@ -5,6 +5,7 @@ app = Flask(__name__)
 
 usuarios = [{"id": e,
              "nome": "Usuario "+str(e),
+             "senha": str(e + 1),
              "idade": str(e + 2)}
             for e in range(1, 11)]
 
