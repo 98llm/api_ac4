@@ -9,6 +9,13 @@ usuarios = [{"id": e,
              "idade": str(e + 2)}
             for e in range(1, 11)]
 
+usuario = {"id": 12,
+           "nome": 'Aluno',
+           "senha": "impacta",
+           "idade": 25}
+
+usuarios.append(usuario)
+
 
 @app.route("/usuarios", methods=['GET'])
 def get():
