@@ -1,18 +1,21 @@
 from flask import Flask, jsonify, request
-
+from names import get_first_name, get_full_name
+import random
 
 app = Flask(__name__)
 
 usuarios = [{"id": e,
-             "nome": "Usuario "+str(e),
+             "nome": get_full_name(),
              "senha": str(e + 1),
-             "idade": str(e + 2)}
+             "idade": random.randint(10, 100),
+             "username": str(e + 2)}
             for e in range(1, 11)]
 
-usuario = {"id": 12,
+usuario = {"id": 11,
            "nome": 'Aluno',
            "senha": "impacta",
-           "idade": 25}
+           "idade": 25,
+           "username": "Aluno"}
 
 usuarios.append(usuario)
 
@@ -62,4 +65,4 @@ def delete(id):
 
 
 if __name__ == "__main__":
-    app.run()
+    app.run(debug=True)
