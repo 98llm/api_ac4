@@ -36,11 +36,11 @@ def get_one(id):
 
 @app.route("/usuarios/<nome>", methods=['GET', 'POST'])
 def get_nome(nome):
-    filtro = [e for e in usuarios if e["nome"] == nome]
+    filtro = [e for e in usuarios if e["nome"] == str(nome)]
     if filtro:
         return jsonify(filtro[0])
     else:
-        return jsonify('Usuario nao existe')
+        return ('Usuario nao existe')
 
 
 @app.route("/usuarios", methods=['POST'])
